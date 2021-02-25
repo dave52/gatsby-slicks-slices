@@ -33,7 +33,7 @@ async function turnPizzasIntoPages({ graphql, actions }) {
 }
 
 async function turnToppingsIntoPages({ graphql, actions }) {
-  console.log(`Turning the toppings into pages`);
+  // console.log(`Turning the toppings into pages`);
   // 1. get the template, going to reuse another component so dont need custom
   // same component for displaying pizzas just need to mod query a bit
   const toppingTemplate = path.resolve('./src/pages/pizzas.js');

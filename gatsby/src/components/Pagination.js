@@ -48,7 +48,13 @@ export default function Pagination({
                  &#8592; Prev
             </Link>
             {Array.from({ length: totalPages }).map((_, i) => (
-                <Link className={currentPage === 1 & i === 0 && 'current'} to={`${base}/${i > 0 ? i + 1 : ''}`}>{i + 1}</Link>
+                <Link 
+                    key={`pagination-button-${currentPage}`} 
+                    className={currentPage === 1 & i === 0 && 'current'} 
+                    to={`${base}/${i > 0 ? i + 1 : ''}`}
+                >
+                    {i + 1}
+                </Link>
             ))}
             <Link disabled={!hasNextPage} to={`${base}/${nextPage}`}>
                 Next &#8594;

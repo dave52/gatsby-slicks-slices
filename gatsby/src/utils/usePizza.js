@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+import OrderContext from '../components/OrderContext';
 // import OrderContext from '../com'
 import attachNamesANdPrices from './attachNamesAndPrices';
 import calculateOrderTotal from './calculateOrderTotal';
@@ -6,7 +7,10 @@ import formatMoney from './formatMoney';
 
 export default function usePizza({ pizzas, values }) {
   // 1. create some state to hold our order
-  const [order, setOrder] = useContext([]);
+  // we got rid of this line because we moved useState up to the provider
+  // const [order, setOrder] = useContext([]);
+  // now we access both our state and our updates function (setOrder) via context
+  const [order, setOrder] = useContext(OrderContext);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');

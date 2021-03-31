@@ -35,7 +35,7 @@ export default function OrderPage({ data }) {
     return <p>{message}</p>;
   }
   return (
-    <p>
+    <>
       <SEO title="Order a Pizza!" />
       <OrderStyles onSubmit={submitOrder}>
         <fieldset disabled={loading}>
@@ -81,6 +81,7 @@ export default function OrderPage({ data }) {
               <div>
                 {['S', 'M', 'L'].map((size) => (
                   <button
+                    key={size}
                     type="button"
                     onClick={() =>
                       addToOrder({
@@ -114,7 +115,7 @@ export default function OrderPage({ data }) {
           </button>
         </fieldset>
       </OrderStyles>
-    </p>
+    </>
   );
 }
 
